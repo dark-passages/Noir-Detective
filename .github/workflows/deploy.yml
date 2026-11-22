@@ -21,25 +21,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: '22'
-          package-manager-cache: false
+          bun-version: latest
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci
+          if [ -f bun.lock ]; then
+            bun install --frozen-lockfile
           else
-            npm install
+            bun install
           fi
 
       - name: Build
-        run: npm run build
+        run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
