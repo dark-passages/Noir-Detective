@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0c0e12;
+    color: #e5dec9;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom corkboard and aged paper textures */
+.bg-corkboard {
+  background-color: #9e7147;
+  background-image:
+    radial-gradient(ellipse at center, rgba(255, 224, 182, 0.14) 0%, rgba(42, 24, 10, 0.42) 100%),
+    radial-gradient(rgba(62, 36, 16, 0.32) 1px, transparent 1px),
+    radial-gradient(rgba(218, 173, 122, 0.28) 1px, transparent 1px),
+    radial-gradient(rgba(82, 48, 22, 0.2) 1.5px, transparent 1.5px);
+  background-size: 100% 100%, 14px 14px, 19px 19px, 27px 27px;
+  background-position: 0 0, 0 0, 7px 9px, 4px 13px;
+}
+
+.bg-manila {
+  background-color: #f4edd8;
+  color: #1f1d19;
+}
+
+.dark .bg-dossier {
+  background-color: #171b22;
+  border-color: #272f3d;
+}
+
+/* Custom vintage scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1217;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b3342;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3e495e;
+}
+

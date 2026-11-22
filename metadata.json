@@ -1,0 +1,6 @@
+{
+  "name": "Noir Detective - Mystery Engine",
+  "description": "A single-player 1940s film noir detective game with a deterministic case generator, city map exploration, topic interrogations, and an interactive corkboard evidence deduction board.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
