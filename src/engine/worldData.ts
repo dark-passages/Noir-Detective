@@ -1546,6 +1546,20 @@ export const EXTRA_CHARACTERS: CharacterTemplate[] = [
     bio: 'Works the marble counters during city hall hours.'
   }),
   makeStaffCharacter({
+    id: 'staff_cityhall_auditor',
+    name: 'Clifford "Cliff" Halstead',
+    alias: 'The City Auditor',
+    title: 'Junior City Auditor at Hall of Records',
+    locationId: 'city_hall',
+    ageBand: 'young_adult',
+    voice: 'posh',
+    collar: 'Charcoal Three-Piece Suit',
+    tint: '#334155',
+    silhouette: 'man_fedora',
+    persona: 'Sharp-eyed young auditor checking municipal bond ledgers and late property transfers.',
+    bio: 'Audits city contracts and public filings at the Hall of Records.'
+  }),
+  makeStaffCharacter({
     id: 'staff_radio_announcer',
     name: 'Dexter "Velvet" Cole',
     alias: 'The Midnight Announcer',

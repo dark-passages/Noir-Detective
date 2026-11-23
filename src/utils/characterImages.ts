@@ -4,163 +4,91 @@
  */
 
 import { CharacterTemplate } from '../types/game';
-import { resolveAssetImage, resolveAssetMap } from './assetUrl';
-
-const MUG_MARA_VANCE = resolveAssetImage('/src/assets/images/person/mara_vance.jpg');
-const MUG_VICTOR_MALONE = resolveAssetImage('/src/assets/images/person/victor_malone.jpg');
-const MUG_ARTHUR_PENDELTON = resolveAssetImage('/src/assets/images/person/arthur_pendelton.jpg');
-const MUG_EVELYN_CROSS = resolveAssetImage('/src/assets/images/person/evelyn_cross.jpg');
-const MUG_SILAS_THORNE = resolveAssetImage('/src/assets/images/person/silas_thorne.jpg');
-const MUG_FATHER_CALLAHAN = resolveAssetImage('/src/assets/images/person/father_callahan_portrait_1795359396601.jpg');
-const MUG_BEATRICE_FONTAINE = resolveAssetImage('/src/assets/images/person/beatrice_fontaine.jpg');
-const MUG_FRANK_OMALLEY = resolveAssetImage('/src/assets/images/person/frank_omalley.jpg');
-const MUG_NUN_HABIT = resolveAssetImage('/src/assets/images/person/agnes_moran.jpg');
-const MUG_CLINIC_NURSE = resolveAssetImage('/src/assets/images/person/clara_holloway.jpg');
-const MUG_DINER_WAITRESS = resolveAssetImage('/src/assets/images/person/dolly_henderson.jpg');
-const MUG_CABARET_DANCER = resolveAssetImage('/src/assets/images/person/scarlett_delacroix.jpg');
-const MUG_YOUNG_CLERK = resolveAssetImage('/src/assets/images/person/hester_finch.jpg');
-const MUG_APRON_WOMAN = resolveAssetImage('/src/assets/images/person/rosie_abramowitz.jpg');
-const MUG_TAILORED_WOMAN = resolveAssetImage('/src/assets/images/person/beatrice_anne_greer.jpg');
-const MUG_ELDER_WOMAN = resolveAssetImage('/src/assets/images/person/clara_whitfield.jpg');
-
-const MUG_CHEF_BAKER = resolveAssetImage('/src/assets/images/person/marco_bellini.jpg');
-const MUG_DOCK_WATCHMAN = resolveAssetImage('/src/assets/images/person/gus_halloway.jpg');
-const MUG_ELDER_CRAFTSMAN = resolveAssetImage('/src/assets/images/person/barnaby_shaw.jpg');
-const MUG_ELDER_GENTLEMAN = resolveAssetImage('/src/assets/images/person/reginald_ashworth.jpg');
-const MUG_BEARDED_WORKER = resolveAssetImage('/src/assets/images/person/seamus_mcbride.jpg');
-const MUG_BESPECTACLED_CLERK = resolveAssetImage('/src/assets/images/person/louie_mercer.jpg');
-const MUG_SUITED_MAN = resolveAssetImage('/src/assets/images/person/gideon_vance_pryce.jpg');
-const MUG_YOUNG_WORKER = resolveAssetImage('/src/assets/images/person/mickey_oshea.jpg');
-const MUG_YOUNG_GENTLEMAN = resolveAssetImage('/src/assets/images/person/young_gentleman_portrait_1795359547850.jpg');
-
-const MUG_JONATHAN_WELLS = resolveAssetImage('/src/assets/images/person/jonathan_wells.jpg');
-const MUG_OTTO_LINDEMANN = resolveAssetImage('/src/assets/images/person/otto_lindemann.jpg');
-const MUG_HENRI_MOREAU = resolveAssetImage('/src/assets/images/person/henri_moreau.jpg');
-const MUG_SCARLETT_DELACROIX = resolveAssetImage('/src/assets/images/person/scarlett_delacroix.jpg');
-const MUG_HARRISON_GRANT = resolveAssetImage('/src/assets/images/person/harrison_grant.jpg');
-
-const MUG_THOMAS_MILLER = resolveAssetImage('/src/assets/images/person/thomas_miller.jpg');
-const MUG_CLARA_MILLER = resolveAssetImage('/src/assets/images/person/clara_miller.jpg');
-const MUG_GRACE_MILLER = resolveAssetImage('/src/assets/images/person/grace_miller.jpg');
-const MUG_EDDIE_MILLER = resolveAssetImage('/src/assets/images/person/eddie_miller.jpg');
-
-const MUG_STANLEY_KOWALSKI = resolveAssetImage('/src/assets/images/person/stanley_kowalski.jpg');
-const MUG_HELENA_KOWALSKI = resolveAssetImage('/src/assets/images/person/helena_kowalski.jpg');
-const MUG_FRANKIE_KOWALSKI = resolveAssetImage('/src/assets/images/person/frankie_kowalski.jpg');
-const MUG_SOFIA_KOWALSKI = resolveAssetImage('/src/assets/images/person/sofia_kowalski.jpg');
-
-const MUG_MATEO_DELGADO = resolveAssetImage('/src/assets/images/person/mateo_delgado.jpg');
-const MUG_ROSA_DELGADO = resolveAssetImage('/src/assets/images/person/rosa_delgado.jpg');
-const MUG_CARLOS_DELGADO = resolveAssetImage('/src/assets/images/person/carlos_delgado.jpg');
-const MUG_LUCIA_DELGADO = resolveAssetImage('/src/assets/images/person/lucia_delgado.jpg');
-
-const MUG_PATRICK_OCONNOR = resolveAssetImage('/src/assets/images/person/patrick_oconnor.jpg');
-const MUG_BRIDGET_OCONNOR = resolveAssetImage('/src/assets/images/person/bridget_oconnor.jpg');
-const MUG_LIAM_OCONNOR = resolveAssetImage('/src/assets/images/person/liam_oconnor.jpg');
-const MUG_MAEVE_OCONNOR = resolveAssetImage('/src/assets/images/person/maeve_oconnor.jpg');
-
-const MUG_MORRIS_GOLDSTEIN = resolveAssetImage('/src/assets/images/person/morris_goldstein.jpg');
-const MUG_ESTHER_GOLDSTEIN = resolveAssetImage('/src/assets/images/person/esther_goldstein.jpg');
-const MUG_DAVID_GOLDSTEIN = resolveAssetImage('/src/assets/images/person/david_goldstein.jpg');
-const MUG_REBECCA_GOLDSTEIN = resolveAssetImage('/src/assets/images/person/rebecca_goldstein.jpg');
-
-const MUG_ANGELA_BELLINI = resolveAssetImage('/src/assets/images/person/mug_angela_bellini_1794749537235.jpg');
-const MUG_TONY_BELLINI = resolveAssetImage('/src/assets/images/person/tony_bellini.jpg');
-const MUG_GINA_BELLINI = resolveAssetImage('/src/assets/images/person/gina_bellini.jpg');
-const MUG_VINCENZO_BELLINI = resolveAssetImage('/src/assets/images/person/mug_vincenzo_bellini_1794749539619.jpg');
-
-const MUG_ARTHUR_STERLING = resolveAssetImage('/src/assets/images/person/mug_arthur_sterling_1794749537937.jpg');
-const MUG_BEATRICE_STERLING = resolveAssetImage('/src/assets/images/person/beatrice_sterling.jpg');
-const MUG_EDWARD_STERLING = resolveAssetImage('/src/assets/images/person/mug_edward_sterling_1794749540529.jpg');
-const MUG_CLAIRE_STERLING = resolveAssetImage('/src/assets/images/person/mug_claire_sterling_1794749540930.jpg');
-
-const MUG_HENRY_CHO = resolveAssetImage('/src/assets/images/person/mug_henry_cho_1794749541126.jpg');
-const MUG_GRACE_CHO = resolveAssetImage('/src/assets/images/person/mug_grace_cho_1794749541096.jpg');
-const MUG_DANIEL_CHO = resolveAssetImage('/src/assets/images/person/mug_daniel_cho_1794749542516.jpg');
-const MUG_IRIS_CHO = resolveAssetImage('/src/assets/images/person/mug_iris_cho_1794749541636.jpg');
+import { resolveAssetMap } from './assetUrl';
 
 export const CHARACTER_MUGSHOTS: Record<string, string> = resolveAssetMap({
   // 8 Core Characters
-  mara_vance: MUG_MARA_VANCE,
-  victor_malone: MUG_VICTOR_MALONE,
-  dr_arthur_pendelton: MUG_ARTHUR_PENDELTON,
-  evelyn_cross: MUG_EVELYN_CROSS,
-  silas_thorne: MUG_SILAS_THORNE,
-  father_callahan: MUG_FATHER_CALLAHAN,
-  beatrice_fontaine: MUG_BEATRICE_FONTAINE,
-  officer_omalley: MUG_FRANK_OMALLEY,
+  mara_vance: '/src/assets/images/person/vance_mara.jpg',
+  victor_malone: '/src/assets/images/person/malone_victor.jpg',
+  dr_arthur_pendelton: '/src/assets/images/person/pendelton_arthur.jpg',
+  evelyn_cross: '/src/assets/images/person/cross_evelyn.jpg',
+  silas_thorne: '/src/assets/images/person/thorne_silas.jpg',
+  father_callahan: '/src/assets/images/person/callahan_thomas.jpg',
+  beatrice_fontaine: '/src/assets/images/person/fontaine_beatrice.jpg',
+  officer_omalley: '/src/assets/images/person/omalley_frank.jpg',
 
   // Clergy & Parish
-  staff_trinity_pastor: MUG_JONATHAN_WELLS,
-  staff_trinity_organist: MUG_ELDER_WOMAN,
-  staff_st_judes_sexton: MUG_ELDER_CRAFTSMAN,
-  staff_riverside_sexton: MUG_NUN_HABIT,
+  staff_trinity_pastor: '/src/assets/images/person/brooks_isaiah.jpg',
+  staff_trinity_organist: '/src/assets/images/person/whitfield_clara.jpg',
+  staff_st_judes_sexton: '/src/assets/images/person/shaw_barnaby.jpg',
+  staff_riverside_sexton: '/src/assets/images/person/moran_agnes.jpg',
 
   // Bakeries, Delis & Restaurants
-  staff_bakery_baker: MUG_OTTO_LINDEMANN,
-  staff_bakery_clerk: MUG_DINER_WAITRESS,
-  staff_rosie_deli: MUG_APRON_WOMAN,
-  staff_harborview_waiter: MUG_HENRI_MOREAU,
-  staff_harborview_bartender: MUG_SUITED_MAN,
-  staff_harborview_chef: MUG_CHEF_BAKER,
-  staff_diner_cook: '/src/assets/images/person/mug_alfonso_ruiz_1794750765186.jpg',
-  staff_diner_waitress: '/src/assets/images/person/mug_dolly_henderson_1794750764992.jpg',
+  staff_bakery_baker: '/src/assets/images/person/lindemann_otto.jpg',
+  staff_bakery_clerk: '/src/assets/images/person/carmichael_penny.jpg',
+  staff_rosie_deli: '/src/assets/images/person/abramowitz_rosie.jpg',
+  staff_harborview_waiter: '/src/assets/images/person/moreau_henri.jpg',
+  staff_harborview_bartender: '/src/assets/images/person/vance_pryce_gideon.jpg',
+  staff_harborview_chef: '/src/assets/images/person/bellini_marco.jpg',
+  staff_diner_cook: '/src/assets/images/person/ruiz_alfonso.jpg',
+  staff_diner_waitress: '/src/assets/images/person/henderson_dolly.jpg',
 
   // Nightclubs, Cabarets & Taverns
-  staff_cabaret_bartender: '/src/assets/images/person/mug_sal_ferraro_1794750766613.jpg',
-  staff_cabaret_dancer1: MUG_SCARLETT_DELACROIX,
-  staff_cabaret_dancer2: MUG_CABARET_DANCER,
-  staff_cabaret_bouncer: '/src/assets/images/person/mug_moose_kowalczyk_1794750765302.jpg',
-  staff_velvet_bartender: MUG_BESPECTACLED_CLERK,
-  staff_velvet_dancer: '/src/assets/images/person/mug_yvonne_laurent_1794750766586.jpg',
-  staff_velvet_bouncer: '/src/assets/images/person/mug_bruno_deluca_1794750766701.jpg',
-  staff_dahlia_waiter: '/src/assets/images/person/mug_maurice_dupont_1794750766663.jpg',
-  staff_dahlia_bartender: '/src/assets/images/person/mug_teddy_rourke_1794750768875.jpg',
-  staff_dahlia_dancer: '/src/assets/images/person/mug_nadia_rostova_1794750767994.jpg',
-  staff_copper_bartender: MUG_BEARDED_WORKER,
-  staff_copper_barback: MUG_YOUNG_WORKER,
+  staff_cabaret_bartender: '/src/assets/images/person/ferraro_sal.jpg',
+  staff_cabaret_dancer1: '/src/assets/images/person/delacroix_scarlett.jpg',
+  staff_cabaret_dancer2: '/src/assets/images/person/marlowe_lola.jpg',
+  staff_cabaret_bouncer: '/src/assets/images/person/kowalczyk_moose.jpg',
+  staff_velvet_bartender: '/src/assets/images/person/mercer_louie.jpg',
+  staff_velvet_dancer: '/src/assets/images/person/laurent_yvonne.jpg',
+  staff_velvet_bouncer: '/src/assets/images/person/deluca_bruno.jpg',
+  staff_dahlia_waiter: '/src/assets/images/person/dupont_maurice.jpg',
+  staff_dahlia_bartender: '/src/assets/images/person/rourke_teddy.jpg',
+  staff_dahlia_dancer: '/src/assets/images/person/rostova_nadia.jpg',
+  staff_copper_bartender: '/src/assets/images/person/mcbride_seamus.jpg',
+  staff_copper_barback: '/src/assets/images/person/oshea_mickey.jpg',
 
-  // Hotels, Shops & Waterfront Staff
-  staff_grand_hotel_concierge: MUG_ELDER_GENTLEMAN,
-  staff_grand_hotel_maid: '/src/assets/images/person/mug_nora_gallagher_1794750769125.jpg',
-  staff_grand_hotel_nightclerk: '/src/assets/images/person/mug_edmund_carmichael_1794750768807.jpg',
-  staff_starlight_manager: '/src/assets/images/person/mug_julian_vance_1794750769999.jpg',
-  staff_starlight_concierge: MUG_TAILORED_WOMAN,
-  staff_antiquities_clerk: MUG_YOUNG_CLERK,
-  staff_pier_dockmaster: MUG_DOCK_WATCHMAN,
-  staff_pier_watchman: '/src/assets/images/person/mug_barney_muldoon_1794750770409.jpg',
-  staff_clinic_nurse: MUG_CLINIC_NURSE,
-  staff_clarion_editor: '/src/assets/images/person/mug_wallace_riggs_1794750770767.jpg',
-  staff_clarion_pressman: '/src/assets/images/person/mug_milo_kowal_1794750820224.jpg',
-  staff_railway_master: '/src/assets/images/person/mug_arthur_bradshaw_1794750772206.jpg',
-  staff_boxing_trainer: '/src/assets/images/person/mug_marty_doyle_1794750772816.jpg',
-  staff_morgue_examiner: '/src/assets/images/person/mug_leonard_kroll_1794750772755.jpg',
-  staff_morgue_attendant: '/src/assets/images/person/mug_simon_phipps_1794750774050.jpg',
-  staff_fish_monger: '/src/assets/images/person/mug_salvadore_greco_1794750772932.jpg',
-  staff_drydock_foreman: '/src/assets/images/person/mug_red_voss_1794750774459.jpg',
-  staff_drydock_guard: '/src/assets/images/person/mug_hector_delgado_1794750774747.jpg',
-  staff_warehouse_watchman: '/src/assets/images/person/mug_chester_gable_1794750775248.jpg',
-  staff_warehouse_foreman: '/src/assets/images/person/mug_mack_dugan_1794750776306.jpg',
-  staff_union_steward: '/src/assets/images/person/mug_john_donovan_1794750775735.jpg',
-  staff_tenement_super: '/src/assets/images/person/mug_olga_kaczmarek_1794750776397.jpg',
-  staff_cityhall_clerk: '/src/assets/images/person/mug_percival_graves_1794750777221.jpg',
-  staff_radio_announcer: '/src/assets/images/person/mug_dexter_cole_1794750777448.jpg',
-  staff_mercer_pharmacist: '/src/assets/images/person/mug_eugene_mercer_1794750776830.jpg',
-  staff_savile_tailor: '/src/assets/images/person/mug_albert_finch_1794750777922.jpg',
-  staff_marigold_florist: '/src/assets/images/person/mug_iris_bloom_1794750779750.jpg',
-  staff_ace_pawnbroker: '/src/assets/images/person/mug_soloman_katz_1794750778335.jpg',
-  staff_crown_barber: '/src/assets/images/person/mug_vito_santoro_1794750779701.jpg',
-  staff_bank_manager: MUG_HARRISON_GRANT,
-  staff_bank_teller: '/src/assets/images/person/mug_miriam_levy_1794750781400.jpg',
-  staff_theater_cashier: '/src/assets/images/person/mug_peggy_dolan_1794750780629.jpg',
-  staff_theater_projectionist: '/src/assets/images/person/mug_buster_halvorsen_1794750781976.jpg',
-  staff_precinct_sergeant: '/src/assets/images/person/mug_dan_burke_1794750781829.jpg',
-  staff_precinct_clerk: '/src/assets/images/person/mug_ray_novak_1794750781613.jpg',
-  staff_library_librarian: '/src/assets/images/person/mug_eleanor_pym_1794750782148.jpg',
-  staff_post_master: '/src/assets/images/person/mug_wilbur_finchley_1794750782601.jpg',
+  // Hotels, Shops, Waterfront & Civic Staff
+  staff_grand_hotel_concierge: '/src/assets/images/person/ashworth_reginald.jpg',
+  staff_grand_hotel_maid: '/src/assets/images/person/gallagher_nora.jpg',
+  staff_grand_hotel_nightclerk: '/src/assets/images/person/carmichael_edmund.jpg',
+  staff_starlight_manager: '/src/assets/images/person/vance_julian.jpg',
+  staff_starlight_concierge: '/src/assets/images/person/greer_beatrice_anne.jpg',
+  staff_antiquities_clerk: '/src/assets/images/person/finch_hester.jpg',
+  staff_pier_dockmaster: '/src/assets/images/person/halloway_gus.jpg',
+  staff_pier_watchman: '/src/assets/images/person/muldoon_barney.jpg',
+  staff_clinic_nurse: '/src/assets/images/person/holloway_clara.jpg',
+  staff_clarion_editor: '/src/assets/images/person/riggs_wallace.jpg',
+  staff_clarion_pressman: '/src/assets/images/person/kowal_milo.jpg',
+  staff_railway_master: '/src/assets/images/person/bradshaw_arthur.jpg',
+  staff_boxing_trainer: '/src/assets/images/person/doyle_marty.jpg',
+  staff_morgue_examiner: '/src/assets/images/person/kroll_leonard.jpg',
+  staff_morgue_attendant: '/src/assets/images/person/phipps_simon.jpg',
+  staff_fish_monger: '/src/assets/images/person/greco_salvadore.jpg',
+  staff_drydock_foreman: '/src/assets/images/person/voss_red.jpg',
+  staff_drydock_guard: '/src/assets/images/person/delgado_hector.jpg',
+  staff_warehouse_watchman: '/src/assets/images/person/gable_chester.jpg',
+  staff_warehouse_foreman: '/src/assets/images/person/dugan_mack.jpg',
+  staff_union_steward: '/src/assets/images/person/donovan_john.jpg',
+  staff_tenement_super: '/src/assets/images/person/kaczmarek_olga.jpg',
+  staff_cityhall_clerk: '/src/assets/images/person/graves_percival.jpg',
+  staff_cityhall_auditor: '/src/assets/images/person/halstead_clifford.jpg',
+  staff_radio_announcer: '/src/assets/images/person/cole_dexter.jpg',
+  staff_mercer_pharmacist: '/src/assets/images/person/mercer_eugene.jpg',
+  staff_savile_tailor: '/src/assets/images/person/finch_albert.jpg',
+  staff_marigold_florist: '/src/assets/images/person/bloom_iris.jpg',
+  staff_ace_pawnbroker: '/src/assets/images/person/katz_soloman.jpg',
+  staff_crown_barber: '/src/assets/images/person/santoro_vito.jpg',
+  staff_bank_manager: '/src/assets/images/person/grant_harrison.jpg',
+  staff_bank_teller: '/src/assets/images/person/levy_miriam.jpg',
+  staff_theater_cashier: '/src/assets/images/person/dolan_peggy.jpg',
+  staff_theater_projectionist: '/src/assets/images/person/halvorsen_buster.jpg',
+  staff_precinct_sergeant: '/src/assets/images/person/burke_dan.jpg',
+  staff_precinct_clerk: '/src/assets/images/person/novak_ray.jpg',
+  staff_library_librarian: '/src/assets/images/person/pym_eleanor.jpg',
+  staff_post_master: '/src/assets/images/person/finchley_wilbur.jpg',
   staff_bus_dispatcher: '/src/assets/images/person/mug_carl_kowal_1794750783416.jpg',
-  staff_taxi_dispatcher: '/src/assets/images/person/mug_sammy_shapiro_1794750785270.jpg',
-  staff_taxi_mechanic: '/src/assets/images/person/mug_dutch_lindqvist_1794750783760.jpg',
+  staff_taxi_dispatcher: '/src/assets/images/person/shapiro_sammy.jpg',
+  staff_taxi_mechanic: '/src/assets/images/person/lindqvist_dutch.jpg',
   staff_foundry_foreman: '/src/assets/images/person/mug_hank_kowalski_1794750783097.jpg',
   staff_mill_forewoman: '/src/assets/images/person/mug_martha_zielinski_1794750785748.jpg',
   staff_conservatory_botanist: '/src/assets/images/person/mug_evelyn_crane_1794750786697.jpg',
@@ -176,85 +104,53 @@ export const CHARACTER_MUGSHOTS: Record<string, string> = resolveAssetMap({
   staff_bookshop_dealer: '/src/assets/images/person/mug_barnaby_locke_1794750791061.jpg',
 
   // Family Visitors (8 families, 32 characters)
-  fam_miller_thomas: MUG_THOMAS_MILLER,
-  fam_miller_clara: MUG_CLARA_MILLER,
-  fam_miller_grace: MUG_GRACE_MILLER,
-  fam_miller_eddie: MUG_EDDIE_MILLER,
+  fam_miller_thomas: '/src/assets/images/person/miller_thomas.jpg',
+  fam_miller_clara: '/src/assets/images/person/miller_clara.jpg',
+  fam_miller_grace: '/src/assets/images/person/miller_grace.jpg',
+  fam_miller_eddie: '/src/assets/images/person/miller_eddie.jpg',
 
-  fam_kowalski_stan: MUG_STANLEY_KOWALSKI,
-  fam_kowalski_helena: MUG_HELENA_KOWALSKI,
-  fam_kowalski_frank: MUG_FRANKIE_KOWALSKI,
-  fam_kowalski_sofia: MUG_SOFIA_KOWALSKI,
+  fam_kowalski_stan: '/src/assets/images/person/kowalski_stanley.jpg',
+  fam_kowalski_helena: '/src/assets/images/person/kowalski_helena.jpg',
+  fam_kowalski_frank: '/src/assets/images/person/kowalski_frankie.jpg',
+  fam_kowalski_sofia: '/src/assets/images/person/kowalski_sofia.jpg',
 
-  fam_delgado_mateo: MUG_MATEO_DELGADO,
-  fam_delgado_rosa: MUG_ROSA_DELGADO,
-  fam_delgado_carlos: MUG_CARLOS_DELGADO,
-  fam_delgado_lucia: MUG_LUCIA_DELGADO,
+  fam_delgado_mateo: '/src/assets/images/person/delgado_mateo.jpg',
+  fam_delgado_rosa: '/src/assets/images/person/delgado_rosa.jpg',
+  fam_delgado_carlos: '/src/assets/images/person/delgado_carlos.jpg',
+  fam_delgado_lucia: '/src/assets/images/person/delgado_lucia.jpg',
 
-  fam_oconnor_patrick: MUG_PATRICK_OCONNOR,
-  fam_oconnor_bridget: MUG_BRIDGET_OCONNOR,
-  fam_oconnor_liam: MUG_LIAM_OCONNOR,
-  fam_oconnor_maeve: MUG_MAEVE_OCONNOR,
+  fam_oconnor_patrick: '/src/assets/images/person/oconnor_patrick.jpg',
+  fam_oconnor_bridget: '/src/assets/images/person/oconnor_bridget.jpg',
+  fam_oconnor_liam: '/src/assets/images/person/oconnor_liam.jpg',
+  fam_oconnor_maeve: '/src/assets/images/person/oconnor_maeve.jpg',
 
-  fam_goldstein_morris: MUG_MORRIS_GOLDSTEIN,
-  fam_goldstein_esther: MUG_ESTHER_GOLDSTEIN,
-  fam_goldstein_david: MUG_DAVID_GOLDSTEIN,
-  fam_goldstein_rebecca: MUG_REBECCA_GOLDSTEIN,
+  fam_goldstein_morris: '/src/assets/images/person/goldstein_morris.jpg',
+  fam_goldstein_esther: '/src/assets/images/person/goldstein_esther.jpg',
+  fam_goldstein_david: '/src/assets/images/person/goldstein_david.jpg',
+  fam_goldstein_rebecca: '/src/assets/images/person/goldstein_rebecca.jpg',
 
-  fam_bellini_angela: MUG_ANGELA_BELLINI,
-  fam_bellini_tony: MUG_TONY_BELLINI,
-  fam_bellini_gina: MUG_GINA_BELLINI,
-  fam_bellini_vincenzo: MUG_VINCENZO_BELLINI,
+  fam_bellini_angela: '/src/assets/images/person/bellini_angela.jpg',
+  fam_bellini_tony: '/src/assets/images/person/bellini_tony.jpg',
+  fam_bellini_gina: '/src/assets/images/person/bellini_gina.jpg',
+  fam_bellini_vincenzo: '/src/assets/images/person/bellini_vincenzo.jpg',
 
-  fam_sterling_arthur: MUG_ARTHUR_STERLING,
-  fam_sterling_beatrice: MUG_BEATRICE_STERLING,
-  fam_sterling_edward: MUG_EDWARD_STERLING,
-  fam_sterling_claire: MUG_CLAIRE_STERLING,
+  fam_sterling_arthur: '/src/assets/images/person/sterling_arthur.jpg',
+  fam_sterling_beatrice: '/src/assets/images/person/sterling_beatrice.jpg',
+  fam_sterling_edward: '/src/assets/images/person/sterling_edward.jpg',
+  fam_sterling_claire: '/src/assets/images/person/sterling_claire.jpg',
 
-  fam_cho_kenji: MUG_HENRY_CHO,
-  fam_cho_evelyn: MUG_GRACE_CHO,
-  fam_cho_daniel: MUG_DANIEL_CHO,
-  fam_cho_iris: MUG_IRIS_CHO
+  fam_cho_kenji: '/src/assets/images/person/cho_henry.jpg',
+  fam_cho_evelyn: '/src/assets/images/person/cho_grace.jpg',
+  fam_cho_daniel: '/src/assets/images/person/cho_daniel.jpg',
+  fam_cho_iris: '/src/assets/images/person/cho_iris.jpg'
 });
 
 export function getCharacterMugshot(
-  character: Pick<CharacterTemplate, 'id' | 'ageBand' | 'avatarStyle'>
+  character: Pick<CharacterTemplate, 'id'>
 ): string {
-  if (CHARACTER_MUGSHOTS[character.id]) {
-    return CHARACTER_MUGSHOTS[character.id];
+  const portrait = CHARACTER_MUGSHOTS[character.id];
+  if (!portrait) {
+    throw new Error(`Missing portrait mapping for character "${character.id}"`);
   }
-
-  const { silhouette, hat, collar } = character.avatarStyle;
-  const age = character.ageBand;
-
-  if (silhouette === 'man_priest') return MUG_FATHER_CALLAHAN;
-  if (hat === 'Police Visor') return MUG_FRANK_OMALLEY;
-  if (hat === 'Watch Cap') return MUG_DOCK_WATCHMAN;
-  if (hat === 'Bowler') return MUG_SILAS_THORNE;
-  if (hat === 'Cloche Hat') return MUG_MARA_VANCE;
-  if (hat === 'Fedora with Press Tag') return MUG_EVELYN_CROSS;
-
-  if (silhouette.startsWith('woman_')) {
-    if (age === 'elder') return MUG_ELDER_WOMAN;
-    if (age === 'young_adult') {
-      if (silhouette === 'woman_singer') return MUG_BEATRICE_FONTAINE;
-      return MUG_YOUNG_CLERK;
-    }
-    if (collar.toLowerCase().includes('apron') || collar.toLowerCase().includes('smock')) {
-      return MUG_APRON_WOMAN;
-    }
-    return MUG_TAILORED_WOMAN;
-  }
-
-  if (silhouette === 'man_glasses') {
-    return age === 'elder' ? MUG_ELDER_GENTLEMAN : MUG_BESPECTACLED_CLERK;
-  }
-  if (silhouette === 'man_beard') {
-    return age === 'elder' ? MUG_ELDER_CRAFTSMAN : MUG_BEARDED_WORKER;
-  }
-  if (age === 'young_adult') {
-    return silhouette === 'man_cop' ? MUG_YOUNG_WORKER : MUG_YOUNG_GENTLEMAN;
-  }
-
-  return MUG_SUITED_MAN;
+  return portrait;
 }
